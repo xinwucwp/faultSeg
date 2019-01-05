@@ -27,14 +27,14 @@ Run train3 to start training a new faultSeg model by using the 200 synthetic dat
 
 If you find this work helpful in your research, please cite:
 
-    @article{wu2018faultSeg,
+    @article{wu2019faultSeg,
         author = {Xinming Wu, Luming Liang, Yunzhi Shi and Sergey Fomel},
         title = {FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation},
         journal = {GEOPHYSICS},
-        volume = {submitted},
+        volume = {minor revision},
         number = { },
         pages = { },
-        year = {2018},
+        year = {2019},
     }
 
 ---
