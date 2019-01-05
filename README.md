@@ -43,6 +43,9 @@ Fault detections are computed on a syntehtic seismic image by using 8 methods of
 C2 (Marfurt et al., 1999), planarity (Hale, 2009), structure-oriented linearity (Wu, 2017), structure-oriented semblance (Hale, 2009), fault likelihood (Hale, 2013; Wu and Hale, 2016), optimal surface voting (Wu and Fomel, 2018) and our CNN-based segmentation.
 ![results/comparison.jpeg](results/comparison.jpeg)
 
+**To quantitatively evaluate the fault detection methods, we further calculate the precision-recall (Martin et al., 2004) and receiver operator characteristic (ROC) (Provost et al., 1998) curves shown below. From the precision-recall curves, we can clearly observe that our CNN method (red curve) provides the highest precisions for all the choices of recall.**
+![results/PR_and_ROC_curves.jpeg](results/PR_and_ROC_curves.jpeg)
+
 ## Test results on multiple field datasets
 
 Although trained by only synthetic datasets, the CNN model works well in 
