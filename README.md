@@ -50,21 +50,27 @@ totally different surveys.
 compare the CNN fault probability (top right) with fault likelihood (bottom)
 ![results/f3CnnFaultByWu.png](results/f3CnnFaultByWu.png)
 
+---
 ### Example of Clyde (provided by Clyde through Paradigm)
 
 compare the CNN fault probability (middle) with fault likelihood (right)
 ![results/clydeCnnFaultByWu.png](results/clydeCnnFaultByWu.png)
 
+---
 ### Example of Costa Rica (acquired in the subduction zone, Costa Rica Margin, provided by Nathan Bangs)
 
 compare the CNN fault probability (left column) with fault likelihood (right column)
 ![results/crfCnnFaultByWu.png](results/crfCnnFaultByWu.png)
 
+---
 ### Example of Campos (acquired at the Campos Basin, offshore Brazil, provided by Michacle Hudec)
 ![results/camposCnnFaultByWu.png](results/camposCnnFaultByWu.png)
 
+---
 ### Example of [Kerry-3D](https://wiki.seg.org/wiki/Kerry-3D) (The fault features have been thinned in this example)
 ![results/kerryCnnFaultByWu.png](results/kerryCnnFaultByWu.png)
+
+---
 ### Example of [Opunake-3D](https://wiki.seg.org/wiki/Opunake-3D) (The fault features have been thinned in this example)
 ![results/opunakeCnnFaultByWu.png](results/opunakeCnnFaultByWu.png)
 
