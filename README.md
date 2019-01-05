@@ -47,7 +47,7 @@ C2 (Marfurt et al., 1999), planarity (Hale, 2009), structure-oriented linearity 
 ![results/PR_and_ROC_curves.jpeg](results/PR_and_ROC_curves.jpeg)
 
 ---
-## Validation on multiple field datasets
+## Validation on multiple field examples
 
 Although trained by only synthetic datasets, the CNN model works well in 
 predicting faults in field datasets that are acquired at totally different surveys. 
