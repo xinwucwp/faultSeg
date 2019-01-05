@@ -63,9 +63,9 @@ compare the CNN fault probability (left column) with fault likelihood (right col
 ### Example of Campos (acquired at the Campos Basin, offshore Brazil, provided by Michacle Hudec)
 ![results/camposCnnFaultByWu.png](results/camposCnnFaultByWu.png)
 
-### Example of [Kerry-3D](https://wiki.seg.org/wiki/Kerry-3D)
+### Example of [Kerry-3D](https://wiki.seg.org/wiki/Kerry-3D) (The fault features have been thinned in this example)
 ![results/kerryCnnFaultByWu.png](results/kerryCnnFaultByWu.png)
-### Example of [Opunake-3D](https://wiki.seg.org/wiki/Opunake-3D)
+### Example of [Opunake-3D](https://wiki.seg.org/wiki/Opunake-3D) (The fault features have been thinned in this example)
 ![results/opunakeCnnFaultByWu.png](results/opunakeCnnFaultByWu.png)
 
 ## License
