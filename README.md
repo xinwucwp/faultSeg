@@ -1,4 +1,3 @@
-
 # FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation
 
 **This is a [Keras](https://keras.io/) version of FaultSeg implemented by [Xinming Wu](http://www.jsg.utexas.edu/wu/) for 3D fault segmentation**
@@ -41,9 +40,8 @@ If you find this work helpful in your research, please cite:
 ---
 ## Test results on multiple field datasets
 
-Although trained by only synthetic datasets, the CNN model works pretty 
-well in predicting faults in field datasets that are acquired at 
-totally different surveys. 
+Although trained by only synthetic datasets, the CNN model works well in 
+predicting faults in field datasets that are acquired at totally different surveys. 
 
 ### Example of Netherlands off-shore F3 (provided by the Dutch Government through TNO and dGB Earth Sciences)
 
