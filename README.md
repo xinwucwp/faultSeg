@@ -38,10 +38,16 @@ If you find this work helpful in your research, please cite:
     }
 
 ---
+## Validation on a synthetic example
+Fault detections are computed on a syntehtic seismic image by using 8 methods of C3 (Gersztenkorn and Marfurt, 1999),
+C2 (Marfurt et al., 1999), planarity (Hale, 2009), structure-oriented linearity (Wu, 2017), structure-oriented semblance (Hale, 2009), fault likelihood (Hale, 2013; Wu and Hale, 2016), optimal surface voting (Wu and Fomel, 2018) and our CNN-based segmentation.
+![results/comparison.jpeg](results/comparison.jpeg)
+
 ## Test results on multiple field datasets
 
 Although trained by only synthetic datasets, the CNN model works well in 
 predicting faults in field datasets that are acquired at totally different surveys. 
+
 
 ### Example of Netherlands off-shore F3 (provided by the Dutch Government through TNO and dGB Earth Sciences)
 
