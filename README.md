@@ -1,8 +1,8 @@
-# FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation
+# FaultSeg: using synthetic datasets to train an end-to-end convolutional neural network for 3D fault segmentation
 
 **This is a [Keras](https://keras.io/) version of FaultSeg implemented by [Xinming Wu](http://www.jsg.utexas.edu/wu/) for 3D fault segmentation**
 
-As described in **FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation** by [Xinming Wu](http://www.jsg.utexas.edu/wu/)<sup>1</sup>, 
+As described in **FaultSeg: using synthetic datasets to train an end-to-end convolutional neural network for 3D fault segmentation** by [Xinming Wu](http://www.jsg.utexas.edu/wu/)<sup>1</sup>, 
 [Luming Liang](https://sites.google.com/site/lumingliangshomepage/)<sup>2</sup>, 
 [Yunzhi Shi](https://scholar.google.com/citations?user=t9dQMgIAAAAJ&hl=en)<sup>1</sup> and 
 [Sergey Fomel](https://www.jsg.utexas.edu/researcher/sergey_fomel/)<sup>1</sup>.
@@ -29,7 +29,7 @@ If you find this work helpful in your research, please cite:
 
     @article{wu2019faultSeg,
         author = {Xinming Wu, Luming Liang, Yunzhi Shi and Sergey Fomel},
-        title = {FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation},
+        title = {FaultSeg3D: using synthetic datasets to train an end-to-end convolutional neural network for 3D fault segmentation},
         journal = {GEOPHYSICS},
         volume = {accepted},
         number = { },
