@@ -31,7 +31,7 @@ If you find this work helpful in your research, please cite:
         author = {Xinming Wu, Luming Liang, Yunzhi Shi and Sergey Fomel},
         title = {FaultSeg: using synthetic datasets to train an end-to-end CNN for 3D fault segmentation},
         journal = {GEOPHYSICS},
-        volume = {minor revision},
+        volume = {accepted},
         number = { },
         pages = { },
         year = {2019},
