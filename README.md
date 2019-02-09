@@ -10,14 +10,14 @@ As described in **FaultSeg: using synthetic datasets to train an end-to-end conv
 
 ## Getting Started with Example Model for fault prediction
 
-If you would just like to try out a pretrained example model, then you can download the [pretrained model](...) and use the 'prediction.ipynb' script to run a demo.
+If you would just like to try out a pretrained example model, then you can download the [pretrained model](https://drive.google.com/drive/folders/1q8sAoLJgbhYHRubzyqMi9KkTeZWXWtNd) and use the 'prediction.ipynb' script to run a demo.
 
 ### Dataset
 
 **To train our CNN network, we automatically created 200 pairs of synthetic seismic and corresponding fault volumes, which were shown 
 to be sufficient to train a good fault segmentation network.** 
 
-**The training and validation datasets can be downloaded [here](...)**
+**The training and validation datasets can be downloaded [here](https://drive.google.com/drive/folders/1FcykAxpqiy2NpLP1icdatrrSQgLRXLP8)**
 
 ### Training
 
