@@ -29,7 +29,7 @@ If you find this work helpful in your research, please cite:
 
     @article{wu2019faultSeg,
         author = {Xinming Wu, Luming Liang, Yunzhi Shi and Sergey Fomel},
-        title = {FaultSeg3D: using synthetic datasets to train an end-to-end convolutional neural network for 3D seismic fault segmentation},
+        title = {Fault{S}eg3{D}: using synthetic datasets to train an end-to-end convolutional neural network for 3{D} seismic fault segmentation},
         journal = {GEOPHYSICS},
         volume = {in press},
         number = { },
