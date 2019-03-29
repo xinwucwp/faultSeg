@@ -33,7 +33,7 @@ If you find this work helpful in your research, please cite:
         journal = {GEOPHYSICS},
         volume = {84},
         number = {3},
-        pages = {in press},
+        pages = {1-36},
         year = {2019},
     }
 
