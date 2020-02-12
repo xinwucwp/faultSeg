@@ -34,15 +34,15 @@ def unet(pretrained_weights = None,input_size = (128,128,128,1)):
     conv4 = Conv3D(512, (3,3,3), activation='relu', padding='same')(pool3)
     conv4 = Conv3D(512, (3,3,3), activation='relu', padding='same')(conv4)
 
-    up5 = concatenate([UpSampling3D(size=(2,2,2))(conv4), conv3], axis=4)
+    up5 = concatenate([UpSampling3D(size=(2,2,2))(conv4), conv3], axis=-1)
     conv5 = Conv3D(64, (3,3,3), activation='relu', padding='same')(up5)
     conv5 = Conv3D(64, (3,3,3), activation='relu', padding='same')(conv5)
 
-    up6 = concatenate([UpSampling3D(size=(2,2,2))(conv5), conv2], axis=4)
+    up6 = concatenate([UpSampling3D(size=(2,2,2))(conv5), conv2], axis=-1)
     conv6 = Conv3D(32, (3,3,3), activation='relu', padding='same')(up6)
     conv6 = Conv3D(32, (3,3,3), activation='relu', padding='same')(conv6)
 
-    up7 = concatenate([UpSampling3D(size=(2,2,2))(conv6), conv1], axis=4)
+    up7 = concatenate([UpSampling3D(size=(2,2,2))(conv6), conv1], axis=-1)
     conv7 = Conv3D(16, (3,3,3), activation='relu', padding='same')(up7)
     conv7 = Conv3D(16, (3,3,3), activation='relu', padding='same')(conv7)
 
