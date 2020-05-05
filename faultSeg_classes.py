@@ -49,11 +49,9 @@ class DataGenerator(keras.utils.Sequence):
     fx  = np.fromfile(self.fpath+str(data_IDs_temp[0])+'.dat',dtype=np.single)
     gx = np.reshape(gx,self.dim)
     fx = np.reshape(fx,self.dim)
-    '''
-    gx = gx-np.min(gx)
-    gx = gx/np.max(gx)
-    gx = gx*255
-    '''
+    #gx = gx-np.min(gx)
+    #gx = gx/np.max(gx)
+    #gx = gx*255
     xm = np.mean(gx)
     xs = np.std(gx)
     gx = gx-xm
