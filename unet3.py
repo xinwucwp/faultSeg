@@ -17,7 +17,7 @@ from keras.callbacks import ModelCheckpoint, LearningRateScheduler
 from keras import backend as keras
 
 
-def unet(pretrained_weights = None,input_size = (128,128,128,1)):
+def unet(pretrained_weights = None,input_size = (None,None,None,1)):
     inputs = Input(input_size)
     conv1 = Conv3D(16, (3,3,3), activation='relu', padding='same')(inputs)
     conv1 = Conv3D(16, (3,3,3), activation='relu', padding='same')(conv1)

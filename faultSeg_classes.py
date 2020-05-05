@@ -49,11 +49,19 @@ class DataGenerator(keras.utils.Sequence):
     fx  = np.fromfile(self.fpath+str(data_IDs_temp[0])+'.dat',dtype=np.single)
     gx = np.reshape(gx,self.dim)
     fx = np.reshape(fx,self.dim)
+    '''
     gx = gx-np.min(gx)
     gx = gx/np.max(gx)
     gx = gx*255
+    '''
+    xm = np.mean(gx)
+    xs = np.std(gx)
+    gx = gx-xm
+    gx = gx/xs
+    gx = np.transpose(gx)
+    fx = np.transpose(fx)
     # Generate data
     for i in range(4):
-      X[i,] = np.reshape(np.rot90(gx,i,(0,1)), (*self.dim,self.n_channels))
-      Y[i,] = np.reshape(np.rot90(fx,i,(0,1)), (*self.dim,self.n_channels))  
+      X[i,] = np.reshape(np.rot90(gx,i,(2,1)), (*self.dim,self.n_channels))
+      Y[i,] = np.reshape(np.rot90(fx,i,(2,1)), (*self.dim,self.n_channels))  
     return X,Y
