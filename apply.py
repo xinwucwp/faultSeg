@@ -12,16 +12,16 @@ from skimage.measure import compare_psnr
 from unet3 import cross_entropy_balanced
 import os
 pngDir = './png/'
-model = load_model('check/fseg-'+'25.hdf5',
+model = load_model('check/fseg-'+'03.hdf5',
                  #'impd.hdf5',
                  custom_objects={
                      'cross_entropy_balanced': cross_entropy_balanced
-                 #} 
+                 } 
                  )
 def main():
   #goTrainTest()
-  goValidTest()
-  #goF3Test()
+  #goValidTest()
+  goF3Test()
 
 def goTrainTest():
   seismPath = "./data/train/seis/"
@@ -56,8 +56,8 @@ def goValidTest():
   fx = np.reshape(fx,(n1,n2,n3))
   gm = np.mean(gx)
   gs = np.std(gx)
-  gx = gx-gm
-  gx = gx/gs
+  #gx = gx-gm
+  #gx = gx/gs
   gx = np.transpose(gx)
   fx = np.transpose(fx)
   fp = model.predict(np.reshape(gx,(1,n1,n2,n3,1)),verbose=1)
@@ -72,10 +72,11 @@ def goF3Test():
   n3,n2,n1=512,384,128
   gx = np.fromfile(seismPath+'gxl.dat',dtype=np.single)
   gx = np.reshape(gx,(n3,n2,n1))
-  gm = np.mean(gx)
-  gs = np.std(gx)
-  gx = gx-gm
-  gx = gx/gs
+  gmin = np.min(gx)
+  gmax = np.max(gx)
+  gx = gx-gmin
+  gx = gx/(gmax-gmin)
+  gx = gx*255
   gx = np.transpose(gx)
   fp = model.predict(np.reshape(gx,(1,n1,n2,n3,1)),verbose=1)
   fp = fp[0,:,:,:,0]
@@ -87,7 +88,9 @@ def plot2d(gx,fx,fp,png=None):
   fig = plt.figure(figsize=(15,5))
   #fig = plt.figure()
   ax = fig.add_subplot(131)
-  ax.imshow(gx,vmin=-2,vmax=2,cmap=plt.cm.bone,interpolation='bicubic',aspect=1)
+  gmin = np.min(gx)
+  gmax = np.max(gx)
+  ax.imshow(gx,vmin=gmin,vmax=gmax,cmap=plt.cm.bone,interpolation='bicubic',aspect=1)
   ax = fig.add_subplot(132)
   ax.imshow(fx,vmin=0,vmax=1,cmap=plt.cm.bone,interpolation='bicubic',aspect=1)
   ax = fig.add_subplot(133)
