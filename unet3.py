@@ -31,8 +31,8 @@ def unet(pretrained_weights = None,input_size = (None,None,None,1)):
     conv3 = Conv3D(64, (3,3,3), activation='relu', padding='same')(conv3)
     pool3 = MaxPooling3D(pool_size=(2,2,2))(conv3)
 
-    conv4 = Conv3D(512, (3,3,3), activation='relu', padding='same')(pool3)
-    conv4 = Conv3D(512, (3,3,3), activation='relu', padding='same')(conv4)
+    conv4 = Conv3D(128, (3,3,3), activation='relu', padding='same')(pool3)
+    conv4 = Conv3D(128, (3,3,3), activation='relu', padding='same')(conv4)
 
     up5 = concatenate([UpSampling3D(size=(2,2,2))(conv4), conv3], axis=-1)
     conv5 = Conv3D(64, (3,3,3), activation='relu', padding='same')(up5)

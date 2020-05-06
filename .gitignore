@@ -12,9 +12,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 /model/*.hdf5
-/data/train/
-/data/validation/
+/data/
 /check/
+/log/
+/png/
 #/src
 #/build
 #/libs

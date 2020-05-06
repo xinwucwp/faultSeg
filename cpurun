@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#org.python.util.jython $*
+CUDA_VISIBLE_DEVICES='' python $*
+
