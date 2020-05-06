@@ -15,7 +15,10 @@
 /data/
 /check/
 /log/
+<<<<<<< HEAD
 /png/
+=======
+>>>>>>> a410292426a18e49fbe6073fa2d71f9b0e218372
 #/src
 #/build
 #/libs
