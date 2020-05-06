@@ -21,7 +21,7 @@ to be sufficient to train a good fault segmentation network.**
 
 ### Training
 
-Run train to start training a new faultSeg model by using the 200 synthetic datasets
+Run train.py to start training a new faultSeg model by using the 200 synthetic datasets
 
 ## Publications
 
