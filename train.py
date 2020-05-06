@@ -26,6 +26,7 @@ def goTrain():
           'shuffle': True}
   seismPathT = "./data/train/seis/"
   faultPathT = "./data/train/fault/"
+
   seismPathV = "./data/validation/seis/"
   faultPathV = "./data/validation/fault/"
   train_ID = range(200)
@@ -35,7 +36,8 @@ def goTrain():
   valid_generator = DataGenerator(dpath=seismPathV,fpath=faultPathV,
                                   data_IDs=valid_ID,**params)
   model = unet(input_size=(None, None, None,1))
-  model.compile(optimizer=Adam(lr=1e-3), loss='binary_crossentropy')
+  model.compile(optimizer=Adam(lr=1e-3), loss='binary_crossentropy', 
+                metrics=['accuracy'])
   model.summary()
 
   # checkpoint
