@@ -15,6 +15,7 @@
 /data/train/
 /data/validation/
 /check/
+/log/
 #/src
 #/build
 #/libs
