@@ -49,8 +49,9 @@ def unet(pretrained_weights = None,input_size = (None,None,None,1)):
     conv8 = Conv3D(1, (1,1,1), activation='sigmoid')(conv7)
 
     model = Model(inputs=[inputs], outputs=[conv8])
-    model.compile(optimizer = Adam(lr = 1e-4), loss = cross_entropy_balanced, metrics = ['accuracy'])
-  
+    model.summary()
+    #model.compile(optimizer = Adam(lr = 1e-4), 
+    #    loss = cross_entropy_balanced, metrics = ['accuracy'])
     return model
 def cross_entropy_balanced(y_true, y_pred):
     # Note: tf.nn.sigmoid_cross_entropy_with_logits expects y_pred is logits, 
