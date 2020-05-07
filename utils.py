@@ -48,15 +48,15 @@ class DataGenerator(keras.utils.Sequence):
     fx  = np.fromfile(self.fpath+str(data_IDs_temp[0])+'.dat',dtype=np.single)
     gx = np.reshape(gx,self.dim)
     fx = np.reshape(fx,self.dim)
-    gmin = np.min(gx)
-    gmax = np.max(gx)
-    gx = gx-gmin
-    gx = gx/(gmax-gmin)
+    #gmin = np.min(gx)
+    #gmax = np.max(gx)
+    #gx = gx-gmin
+    #gx = gx/(gmax-gmin)
     #gx = gx*255
-    #xm = np.mean(gx)
-    #xs = np.std(gx)
-    #gx = gx-xm
-    #gx = gx/xs
+    xm = np.mean(gx)
+    xs = np.std(gx)
+    gx = gx-xm
+    gx = gx/xs
     gx = np.transpose(gx)
     fx = np.transpose(fx)
     #in seismic processing, the dimensions of a seismic array is often arranged as
