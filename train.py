@@ -36,12 +36,12 @@ def goTrain():
   valid_generator = DataGenerator(dpath=seismPathV,fpath=faultPathV,
                                   data_IDs=valid_ID,**params)
   model = unet(input_size=(None, None, None,1))
-  model.compile(optimizer=Adam(lr=1e-4), loss=cross_entropy_balanced, 
+  model.compile(optimizer=Adam(lr=1e-4), loss='binary_crossentropy', 
                 metrics=['accuracy'])
   model.summary()
 
   # checkpoint
-  filepath="check/fseg-{epoch:02d}.hdf5"
+  filepath="check1/fseg-{epoch:02d}.hdf5"
   checkpoint = ModelCheckpoint(filepath, monitor='val_acc', 
         verbose=1, save_best_only=False, mode='max')
   logging = TrainValTensorBoard()
@@ -52,7 +52,7 @@ def goTrain():
   # Fit the model
   history=model.fit_generator(generator=train_generator,
   validation_data=valid_generator,epochs=100,callbacks=callbacks_list,verbose=1)
-  model.save('check/fseg.hdf5')
+  model.save('check1/fseg.hdf5')
   showHistory(history)
 
 def showHistory(history):
@@ -84,7 +84,7 @@ def showHistory(history):
   plt.show()
 
 class TrainValTensorBoard(TensorBoard):
-    def __init__(self, log_dir='./log', **kwargs):
+    def __init__(self, log_dir='./log1', **kwargs):
         # Make the original `TensorBoard` log to a subdirectory 'training'
         training_log_dir = os.path.join(log_dir, 'training')
         super(TrainValTensorBoard, self).__init__(training_log_dir, **kwargs)
