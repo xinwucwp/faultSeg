@@ -36,7 +36,7 @@ def goTrain():
   valid_generator = DataGenerator(dpath=seismPathV,fpath=faultPathV,
                                   data_IDs=valid_ID,**params)
   model = unet(input_size=(None, None, None,1))
-  model.compile(optimizer=Adam(lr=1e-3), loss=cross_entropy_balanced, 
+  model.compile(optimizer=Adam(lr=1e-4), loss=cross_entropy_balanced, 
                 metrics=['accuracy'])
   model.summary()
 
@@ -45,9 +45,9 @@ def goTrain():
   checkpoint = ModelCheckpoint(filepath, monitor='val_acc', 
         verbose=1, save_best_only=False, mode='max')
   logging = TrainValTensorBoard()
-  reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, 
-                                patience=20, min_lr=1e-8)
-  callbacks_list = [checkpoint, logging, reduce_lr]
+  #reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, 
+  #                              patience=20, min_lr=1e-8)
+  callbacks_list = [checkpoint, logging]
   print("data prepared, ready to train!")
   # Fit the model
   history=model.fit_generator(generator=train_generator,

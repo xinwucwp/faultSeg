@@ -52,7 +52,7 @@ class DataGenerator(keras.utils.Sequence):
     gmax = np.max(gx)
     gx = gx-gmin
     gx = gx/(gmax-gmin)
-    gx = gx*255
+    #gx = gx*255
     #xm = np.mean(gx)
     #xs = np.std(gx)
     #gx = gx-xm
@@ -62,9 +62,16 @@ class DataGenerator(keras.utils.Sequence):
     #in seismic processing, the dimensions of a seismic array is often arranged as
     #a[n3][n2][n1]
     # Generate data
-    X = np.zeros((4, *self.dim, self.n_channels),dtype=np.single)
-    Y = np.zeros((4, *self.dim, self.n_channels),dtype=np.single)
+    X = np.zeros((2, *self.dim, self.n_channels),dtype=np.single)
+    Y = np.zeros((2, *self.dim, self.n_channels),dtype=np.single)
+    X[0,] = np.reshape(gx, (*self.dim,self.n_channels))
+    Y[0,] = np.reshape(fx, (*self.dim,self.n_channels))  
+    X[1,] = np.reshape(np.flipud(gx), (*self.dim,self.n_channels))
+    Y[1,] = np.reshape(np.flipud(fx), (*self.dim,self.n_channels))  
+
+    '''
     for i in range(4):
       X[i,] = np.reshape(np.rot90(gx,i,(2,1)), (*self.dim,self.n_channels))
       Y[i,] = np.reshape(np.rot90(fx,i,(2,1)), (*self.dim,self.n_channels))  
+    '''
     return X,Y

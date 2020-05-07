@@ -12,7 +12,7 @@ from skimage.measure import compare_psnr
 from unet3 import cross_entropy_balanced
 import os
 pngDir = './png/'
-model = load_model('check/fseg-'+'03.hdf5',
+model = load_model('check/fseg-'+'27.hdf5',
                  #'impd.hdf5',
                  custom_objects={
                      'cross_entropy_balanced': cross_entropy_balanced
@@ -20,7 +20,7 @@ model = load_model('check/fseg-'+'03.hdf5',
                  )
 def main():
   #goTrainTest()
-  #goValidTest()
+  goValidTest()
   goF3Test()
 
 def goTrainTest():
@@ -54,10 +54,10 @@ def goValidTest():
   fx = np.fromfile(faultPath+str(dk)+'.dat',dtype=np.single)
   gx = np.reshape(gx,(n1,n2,n3))
   fx = np.reshape(fx,(n1,n2,n3))
-  gm = np.mean(gx)
-  gs = np.std(gx)
-  #gx = gx-gm
-  #gx = gx/gs
+  gmin = np.min(gx)
+  gmax = np.max(gx)
+  gx = gx-gmin
+  gx = gx/(gmax-gmin)
   gx = np.transpose(gx)
   fx = np.transpose(fx)
   fp = model.predict(np.reshape(gx,(1,n1,n2,n3,1)),verbose=1)
@@ -65,7 +65,15 @@ def goValidTest():
   gx1 = gx[50,:,:]
   fx1 = fx[50,:,:]
   fp1 = fp[50,:,:]
-  plot2d(gx1,fx1,fp1,png='fp')
+  gx2 = gx[:,29,:]
+  fx2 = fx[:,29,:]
+  fp2 = fp[:,29,:]
+  gx3 = gx[:,:,29]
+  fx3 = fx[:,:,29]
+  fp3 = fp[:,:,29]
+  plot2d(gx1,fx1,fp1,png='fp1')
+  plot2d(gx2,fx2,fp2,png='fp2')
+  plot2d(gx3,fx3,fp3,png='fp3')
 
 def goF3Test(): 
   seismPath = "./data/prediction/f3d/"
@@ -76,7 +84,7 @@ def goF3Test():
   gmax = np.max(gx)
   gx = gx-gmin
   gx = gx/(gmax-gmin)
-  gx = gx*255
+  #gx = gx*255
   gx = np.transpose(gx)
   fp = model.predict(np.reshape(gx,(1,n1,n2,n3,1)),verbose=1)
   fp = fp[0,:,:,:,0]
